@@ -10,6 +10,29 @@ This is a starter kit for developing, testing, and deploying smart contracts wit
 
 Clone this repository, then install the dependencies with `npm install`. Build everything with `npm run build`. https://hardhat.org has excellent docs, and can be used as reference for extending this project.
 
+### Environment Setup
+ - [Create a Polyscan Account and API Key](https://polygonscan.com/myapikey)
+ - [Create an Alchemy account](https://dashboard.alchemyapi.io/)
+   - Create a Polygon Mumbai App within Alchemy
+ - [Create an Ethernal account](https://app.tryethernal.com)
+   - Create a Matic chain workspace within Ethernal
+ - Create a secret, development ONLY address. 
+   - Easily done by generating a new Metamask wallet and exporting the private key.
+ - Fund your development address using the [Polygon Mumbai Faucet](https://faucet.polygon.technology/) (recommend funding a few matic)
+ - Get the Block number of your final funding transaction from Polyscan.
+ - Create a `.env` file at the root of this project and create/fill the following variables in that file:
+ ```
+ETHERSCAN_API_KEY=<YOUR POLYSCAN API KEY>
+DEV_PRIVATE_KEY=<YOUR DEVELOPMENT ONLY WALLET ADDRESS>
+ALCHEMY_KEY=<YOUR ALCHEMY API KEY (END OF THE API URL YOU SEE IN ALCHEMY)
+BLOCK_PIN=<BLOCK NUMBER OF LAST FUNDING TRANSACTION>
+ ```
+### Helpful Docs
+- https://docs.openzeppelin.com/learn/connecting-to-public-test-networks
+- https://hardhat.org/hardhat-network/guides/mainnet-forking.html
+- https://doc.tryethernal.com/getting-started/hardhat-project-setup
+- ???
+
 ## Available Functionality
 
 ### Build Contracts and Generate Typechain Typeings
@@ -59,3 +82,5 @@ Using the [hardhat-etherscan plugin](https://hardhat.org/plugins/nomiclabs-hardh
 `npx hardhat verify --network rinkeby <DEPLOYED ADDRESS>`
 
 PRs and feedback welcome!
+
+
